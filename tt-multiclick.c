@@ -1129,7 +1129,8 @@ static void on_toggle_start(GtkToggleButton *tb, gpointer unused) {
 int main(int argc, char **argv) {
     gtk_init(&argc, &argv);
 
-    GtkBuilder *builder = gtk_builder_new_from_file("tt-multiclick.ui");
+    GtkBuilder *builder =
+        gtk_builder_new_from_file(DATADIR "/tt-multiclick/tt-multiclick.ui");
     main_window = GTK_WIDGET(gtk_builder_get_object(builder, "main_window"));
     btn_device  = GTK_WIDGET(gtk_builder_get_object(builder, "btn_device"));
     btn_key1    = GTK_WIDGET(gtk_builder_get_object(builder, "btn_key1"));
