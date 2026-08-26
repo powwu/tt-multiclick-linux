@@ -2,24 +2,33 @@ project(
   'tt-multiclick',
   'c',
   default_options: [
-    'warning_level=2',
     'c_std=c11',
+    'warning_level=2',
   ],
 )
 
-gtk = dependency('gtk+-3.0')
-evdev = dependency('libevdev')
-x11 = dependency('x11')
-xtst = dependency('xtst')
-xi = dependency('xi')
-ei = dependency('libei-1.0')
+add_project_arguments(
+  '-D_POSIX_C_SOURCE=200809L',
+  language: 'c',
+)
+
+gtk    = dependency('gtk+-3.0')
+evdev  = dependency('libevdev')
+x11    = dependency('x11')
+xtst   = dependency('xtst')
+xi     = dependency('xi')
+ei     = dependency('libei-1.0')
 thread = dependency('threads')
 
-datadir = get_option('prefix') / get_option('datadir')
+conf = configuration_data()
+conf.set_quoted(
+  'TT_MULTICLICK_DATADIR',
+  get_option('prefix') / get_option('datadir') / 'tt-multiclick',
+)
 
-add_project_arguments(
-  '-DDATADIR="' + datadir + '"',
-  language: 'c',
+configure_file(
+  output: 'config.h',
+  configuration: conf,
 )
 
 executable(
