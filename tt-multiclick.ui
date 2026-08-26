@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <requires lib="gtk+" version="3.20"/>
+  <object class="GtkApplicationWindow" id="main_window">
+    <property name="title">TT Multiclick</property>
+    <property name="resizable">False</property>
+    <property name="border_width">12</property>
+    <child>
+      <object class="GtkBox">
+        <property name="orientation">vertical</property>
+        <property name="spacing">8</property>
+        <child>
+          <object class="GtkGrid">
+            <property name="row_spacing">6</property>
+            <property name="column_spacing">8</property>
+            <child>
+              <object class="GtkLabel">
+                <property name="label">Device:</property>
+                <property name="xalign">1</property>
+              </object>
+              <packing><property name="left_attach">0</property><property name="top_attach">0</property></packing>
+            </child>
+            <child>
+              <object class="GtkButton" id="btn_device">
+                <property name="label">(click to select)</property>
+                <property name="hexpand">True</property>
+              </object>
+              <packing><property name="left_attach">1</property><property name="top_attach">0</property></packing>
+            </child>
+            <child>
+              <object class="GtkLabel">
+                <property name="label">Mouse 1 key:</property>
+                <property name="xalign">1</property>
+              </object>
+              <packing><property name="left_attach">0</property><property name="top_attach">1</property></packing>
+            </child>
+            <child>
+              <object class="GtkButton" id="btn_key1">
+                <property name="hexpand">True</property>
+              </object>
+              <packing><property name="left_attach">1</property><property name="top_attach">1</property></packing>
+            </child>
+            <child>
+              <object class="GtkLabel">
+                <property name="label">Mouse 2 key:</property>
+                <property name="xalign">1</property>
+              </object>
+              <packing><property name="left_attach">0</property><property name="top_attach">2</property></packing>
+            </child>
+            <child>
+              <object class="GtkButton" id="btn_key2">
+                <property name="hexpand">True</property>
+              </object>
+              <packing><property name="left_attach">1</property><property name="top_attach">2</property></packing>
+            </child>
+            <child>
+              <object class="GtkLabel">
+                <property name="label">Game:</property>
+                <property name="xalign">1</property>
+              </object>
+              <packing><property name="left_attach">0</property><property name="top_attach">3</property></packing>
+            </child>
+            <child>
+              <object class="GtkComboBoxText" id="combo_title">
+                <property name="hexpand">True</property>
+                <items>
+                  <item>Toontown Rewritten</item>
+                  <item>Corporate Clash</item>
+                  <item>Custom…</item>
+                </items>
+              </object>
+              <packing><property name="left_attach">1</property><property name="top_attach">3</property></packing>
+            </child>
+            <child>
+              <object class="GtkEntry" id="entry_title">
+                <property name="text">Toontown Rewritten</property>
+                <property name="hexpand">True</property>
+                <property name="sensitive">False</property>
+              </object>
+              <packing><property name="left_attach">1</property><property name="top_attach">4</property></packing>
+            </child>
+          </object>
+        </child>
+        <child>
+          <object class="GtkCheckButton" id="chk_skip_source">
+            <property name="label">Skip source window for left click</property>
+            <property name="active">True</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkCheckButton" id="chk_skip_source_r">
+            <property name="label">Skip source window for right click</property>
+            <property name="active">True</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkCheckButton" id="chk_xephyr">
+            <property name="label">Xephyr mode (each instance in its own Xephyr)</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkCheckButton" id="chk_gamescope">
+            <property name="label">Gamescope mode (each instance in its own gamescope)</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkToggleButton" id="btn_start">
+            <property name="label">Start</property>
+            <property name="sensitive">False</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkLabel" id="lbl_status">
+            <property name="label">Select a device to begin.</property>
+            <property name="wrap">True</property>
+            <property name="max_width_chars">40</property>
+            <property name="xalign">0</property>
+          </object>
+        </child>
+      </object>
+    </child>
+  </object>
+</interface>
